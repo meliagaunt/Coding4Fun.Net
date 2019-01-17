@@ -1,14 +1,15 @@
 trigger:
--master
+- master
 
 pool:
-vmImage:'Ubuntu-16.trx
+vmImage: 'Ubuntu-16.trx
 
 variables:
 buildConfiguration: 'Release'
 imageName: 'coding4fun:$(Build.BuildId)'
 
 steps:
+- script:
 cd src/BackEnd
 dotnet build --configuration ($buidConfiguration)
 dotnet test dotnetcore-dotnetcore-tests --configuration $(bbuildConfiguration --logger trx
